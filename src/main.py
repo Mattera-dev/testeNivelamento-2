@@ -6,8 +6,8 @@ pdfService = PdfService()
 
 def main():
     data = pdfService.extractData("./data/Anexo I.pdf")
-    suce, file = CsvService.saveToCsv(data)
-    if suce:
+    err, file = CsvService.saveToCsv(data)
+    if not err:
         if ZipService.compactCsv(file): 
             print("O arquivo foi zipado com sucesso!")
     else:
