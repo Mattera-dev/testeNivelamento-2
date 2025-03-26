@@ -1,5 +1,9 @@
+from services.pdfService import PdfService
+
+pdfService = PdfService()
+
 def main():
-    print("Hello world!")
+    data = pdfService.extractData("./data/Anexo I.pdf")
 
 if __name__ == "__main__":
     main()
